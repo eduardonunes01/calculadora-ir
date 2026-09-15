@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import './App.css';
 
 function App() {
@@ -7,6 +7,9 @@ function App() {
   const [impostoRetido, setImpostoRetido] = useState('');
   const [resultado, setResultado] = useState(null);
   const [erro, setErro] = useState(null);
+
+  const refDeducoes = useRef(null);
+  const refImpostoRetido = useRef(null);
 
   async function calcular() {
     setErro(null);
@@ -47,26 +50,31 @@ function App() {
             value={rendimentos}
             onChange={(e) => setRendimentos(e.target.value)}
             placeholder="Total de rendimentos:"
+            onKeyDown={(e) => e.key === 'Enter' && refDeducoes.current.focus()}
           />
         </div>
 
         <div className="campo">
           <label>Deduções:</label>
           <input
+            ref={refDeducoes}
             type="number"
             value={deducoes}
             onChange={(e) => setDeducoes(e.target.value)}
             placeholder="Total de deduções:"
+            onKeyDown={(e) => e.key === 'Enter' && refImpostoRetido.current.focus()}
           />
         </div>
 
         <div className="campo">
           <label>Imposto retido:</label>
           <input
+            ref={refImpostoRetido}
             type="number"
             value={impostoRetido}
             onChange={(e) => setImpostoRetido(e.target.value)}
             placeholder="Total de imposto retido:"
+            onKeyDown={(e) => e.key === 'Enter' && calcular()}
           />
         </div>
 
