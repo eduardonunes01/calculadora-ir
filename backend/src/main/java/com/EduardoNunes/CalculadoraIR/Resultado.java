@@ -8,17 +8,20 @@ public class Resultado {
     private BigDecimal impostoDevido;
     private BigDecimal impostoRetido;
     private BigDecimal diferenca;
+    private FaixaTributariaDTO faixaAplicada;
 
     public Resultado(
             BigDecimal baseCalculo,
             BigDecimal impostoDevido,
             BigDecimal impostoRetido,
-            BigDecimal diferenca) {
+            BigDecimal diferenca,
+            FaixaTributariaDTO faixaTributariaDTO) {
 
         this.baseCalculo = baseCalculo;
         this.impostoDevido = impostoDevido;
         this.impostoRetido = impostoRetido;
         this.diferenca = diferenca;
+        this.faixaAplicada = faixaAplicada;
     }
 
     public BigDecimal getBaseCalculo() {
@@ -37,4 +40,7 @@ public class Resultado {
         return diferenca;
     }
 
+    public FaixaTributariaDTO getFaixaAplicada() {
+        return faixaAplicada;
+    }
 }
