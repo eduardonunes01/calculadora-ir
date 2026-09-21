@@ -8,12 +8,20 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0;
 }
 
-.pagina {
+/* .pagina {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
   padding: 24px;
+  background: linear-gradient(135deg, #1a4a2e, #2d7a4f, #1a4a2d);
+} */
+
+.pagina {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding-top: 50px;
   background: linear-gradient(135deg, #1a4a2e, #2d7a4f, #1a4a2d);
 }
 
@@ -107,4 +115,80 @@ button {
   border-radius: 10px;
   background: #fee2e2;
   color: #991b1b;
+}
+
+.abas {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.aba {
+  flex: 1;
+  padding: 10px;
+  margin-top: 0;
+  border-radius: 8px;
+  background: #e5e7eb;
+  color: #374151;
+  font-weight: 600;
+}
+
+.aba-ativa {
+  background: #2d7a4f;
+  color: white;
+}
+
+.aba:hover {
+  background: #1a4a2e;
+  color: white;
+}
+
+.linha-resultado {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 15px;
+}
+
+.destaque {
+  font-weight: 700;
+  font-size: 16px;
+  border-bottom: none;
+  margin-top: 4px;
+}
+
+.restituir {
+  color: #2d7a4f;
+}
+
+.pagar {
+  color: #991b1b;
+}
+
+.historico {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.card-historico {
+  padding: 16px;
+  border-radius: 12px;
+  background: #f3f4f6;
+}
+
+.data-historico {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 10px;
+}
+
+.carregando, .vazio {
+  text-align: center;
+  color: #6b7280;
+  margin-top: 16px;
 }
